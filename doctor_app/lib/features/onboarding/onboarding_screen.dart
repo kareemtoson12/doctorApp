@@ -15,13 +15,10 @@ class OnboardingScreen extends StatelessWidget {
       body: SafeArea(
           child: SingleChildScrollView(
               child: Padding(
-        padding: EdgeInsets.only(top: 30.h, bottom: 30.h),
+        padding: EdgeInsets.only(top: 1.h, bottom: 1.h),
         child: Column(
           children: [
             DocLogoAndNamae(),
-            SizedBox(
-              height: 30.h,
-            ),
             DoctorImageAndText(context),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -35,7 +32,7 @@ class OnboardingScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: 30.h,
+                    height: 10.h,
                   ),
                   getstartedBottom(context),
                 ],

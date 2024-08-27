@@ -9,7 +9,7 @@ Widget DocLogoAndNamae() {
     children: <Widget>[
       SvgPicture.asset('assets/svg/docDocLogo.svg'),
       Padding(
-        padding: EdgeInsets.all(8.h),
+        padding: EdgeInsets.all(5.h),
         child: Text(
           'Docdoc',
           style: CustomstextStyels.font24black700Wight,

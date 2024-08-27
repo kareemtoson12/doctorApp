@@ -1,5 +1,6 @@
 import 'package:doctor_app/core/theming/styels.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 Widget DoctorImageAndText(BuildContext context) {
@@ -7,6 +8,8 @@ Widget DoctorImageAndText(BuildContext context) {
     children: [
       SvgPicture.asset('assets/svg/opictyLogo.svg'),
       Container(
+        width: 400.w,
+        height: 500.h,
         foregroundDecoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [

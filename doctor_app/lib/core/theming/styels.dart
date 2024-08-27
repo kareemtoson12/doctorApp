@@ -14,5 +14,5 @@ class CustomstextStyels {
       color: ColorsManger.minBlue);
 
   static TextStyle font13RegularGray = TextStyle(
-      fontSize: 13.sp, fontWeight: FontWeight.normal, color: ColorsManger.gray);
+      fontSize: 16.sp, fontWeight: FontWeight.normal, color: ColorsManger.gray);
 }

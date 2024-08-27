@@ -13,7 +13,7 @@ Widget getstartedBottom(BuildContext context) {
         context.pushNamed(Routes.loginScreen, arguments: {'id': 1});
       },
       child: Container(
-          padding: EdgeInsets.all(15.h),
+          padding: EdgeInsets.all(10.h),
           width: double.infinity,
           decoration: BoxDecoration(
               color: ColorsManger.minBlue,
