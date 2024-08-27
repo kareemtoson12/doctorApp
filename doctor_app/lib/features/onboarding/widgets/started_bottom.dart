@@ -10,7 +10,9 @@ Widget getstartedBottom(BuildContext context) {
   // ignore: prefer_const_constructors
   return TextButton(
       onPressed: () {
-        context.pushNamed(Routes.loginScreen, arguments: {'id': 1});
+        context.pushNamed(
+          Routes.loginScreen,
+        );
       },
       child: Container(
           padding: EdgeInsets.all(10.h),
