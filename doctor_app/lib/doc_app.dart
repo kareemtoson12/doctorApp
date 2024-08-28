@@ -23,7 +23,7 @@ class DocApp extends StatelessWidget {
         theme: ThemeData(
             primaryColor: ColorsManger.minBlue,
             scaffoldBackgroundColor: Colors.white),
-        title: 'Doc Doc',
+        title: 'DocDoc',
       ),
     );
   }
