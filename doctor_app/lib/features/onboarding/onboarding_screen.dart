@@ -21,18 +21,13 @@ class OnboardingScreen extends StatelessWidget {
             DocLogoAndNamae(32),
             DoctorImageAndText(context),
             Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 30.w,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
               child: Column(
                 children: [
                   Text(
                     'Manage and schedule all of your medical appointments easily with\n Docdoc to get a new experience.',
                     style: CustomstextStyels.font13RegularGray,
                     textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: 10.h,
                   ),
                   getstartedBottom(context),
                 ],

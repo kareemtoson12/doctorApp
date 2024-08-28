@@ -6,10 +6,11 @@ import 'package:flutter_svg/svg.dart';
 Widget DoctorImageAndText(BuildContext context) {
   return Stack(
     children: [
-      SvgPicture.asset('assets/svg/opictyLogo.svg'),
+      Container(
+          height: 400.h, child: SvgPicture.asset('assets/svg/opictyLogo.svg')),
       Container(
         width: 400.w,
-        height: 500.h,
+        height: 400.h,
         foregroundDecoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [
@@ -23,7 +24,7 @@ Widget DoctorImageAndText(BuildContext context) {
         child: Image.asset('assets/images/onboarding_doctor.png'),
       ),
       Positioned(
-        bottom: 30,
+        bottom: 1,
         right: 0,
         left: 0,
         child: Text(
