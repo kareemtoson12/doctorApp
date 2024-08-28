@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-Widget DocLogoAndNamae() {
+Widget DocLogoAndNamae(double paddingvalue) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
@@ -12,7 +12,8 @@ Widget DocLogoAndNamae() {
         padding: EdgeInsets.all(5.h),
         child: Text(
           'Docdoc',
-          style: CustomstextStyels.font24black700Wight,
+          style: CustomstextStyels.font24black700Wight
+              .copyWith(fontSize: paddingvalue.h),
         ),
       )
     ],
