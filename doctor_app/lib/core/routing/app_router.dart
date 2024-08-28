@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   Route gnerateRoute(RouteSettings settings) {
+    //final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBordingScreen:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());

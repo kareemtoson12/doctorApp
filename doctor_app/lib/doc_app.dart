@@ -11,7 +11,7 @@ class DocApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       // Use builder only if you need to use library outside ScreenUtilInit context
@@ -23,7 +23,7 @@ class DocApp extends StatelessWidget {
         theme: ThemeData(
             primaryColor: ColorsManger.minBlue,
             scaffoldBackgroundColor: Colors.white),
-        title: 'Doc Doc',
+        title: 'DocDoc',
       ),
     );
   }
