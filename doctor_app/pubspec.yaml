@@ -48,6 +48,7 @@ dependencies:
   #responsive 
   flutter_screenutil: ^5.9.3
   flutter_native_splash: ^2.4.1
+  animations: ^2.0.11
 
 dev_dependencies:
   flutter_test:

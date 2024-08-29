@@ -15,11 +15,11 @@ Widget getstartedBottom(BuildContext context) {
         );
       },
       child: Container(
-          padding: EdgeInsets.all(10.h),
+          padding: EdgeInsets.all(15.h),
           width: double.infinity,
           decoration: BoxDecoration(
               color: ColorsManger.minBlue,
-              borderRadius: BorderRadius.circular(50)),
+              borderRadius: BorderRadius.circular(16)),
           child: Center(
             child: Text(
               'Get Started',
