@@ -19,19 +19,19 @@ mixin _$ApiResult<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(String message) failure,
+    required TResult Function(ErrorHandler objOferrorHander) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(ErrorHandler objOferrorHander)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(String message)? failure,
+    TResult Function(ErrorHandler objOferrorHander)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,7 +155,7 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(String message) failure,
+    required TResult Function(ErrorHandler objOferrorHander) failure,
   }) {
     return success(data);
   }
@@ -164,7 +164,7 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(ErrorHandler objOferrorHander)? failure,
   }) {
     return success?.call(data);
   }
@@ -173,7 +173,7 @@ class _$SuccessImpl<T> with DiagnosticableTreeMixin implements Success<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(String message)? failure,
+    TResult Function(ErrorHandler objOferrorHander)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -232,7 +232,7 @@ abstract class _$$FailureImplCopyWith<T, $Res> {
           _$FailureImpl<T> value, $Res Function(_$FailureImpl<T>) then) =
       __$$FailureImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String message});
+  $Res call({ErrorHandler objOferrorHander});
 }
 
 /// @nodoc
@@ -248,13 +248,13 @@ class __$$FailureImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? objOferrorHander = null,
   }) {
     return _then(_$FailureImpl<T>(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == objOferrorHander
+          ? _value.objOferrorHander
+          : objOferrorHander // ignore: cast_nullable_to_non_nullable
+              as ErrorHandler,
     ));
   }
 }
@@ -262,14 +262,14 @@ class __$$FailureImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
-  const _$FailureImpl(this.message);
+  const _$FailureImpl(this.objOferrorHander);
 
   @override
-  final String message;
+  final ErrorHandler objOferrorHander;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ApiResult<$T>.failure(message: $message)';
+    return 'ApiResult<$T>.failure(objOferrorHander: $objOferrorHander)';
   }
 
   @override
@@ -277,7 +277,7 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ApiResult<$T>.failure'))
-      ..add(DiagnosticsProperty('message', message));
+      ..add(DiagnosticsProperty('objOferrorHander', objOferrorHander));
   }
 
   @override
@@ -285,11 +285,12 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailureImpl<T> &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.objOferrorHander, objOferrorHander) ||
+                other.objOferrorHander == objOferrorHander));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, objOferrorHander);
 
   /// Create a copy of ApiResult
   /// with the given fields replaced by the non-null parameter values.
@@ -303,29 +304,29 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(String message) failure,
+    required TResult Function(ErrorHandler objOferrorHander) failure,
   }) {
-    return failure(message);
+    return failure(objOferrorHander);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(ErrorHandler objOferrorHander)? failure,
   }) {
-    return failure?.call(message);
+    return failure?.call(objOferrorHander);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(String message)? failure,
+    TResult Function(ErrorHandler objOferrorHander)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(message);
+      return failure(objOferrorHander);
     }
     return orElse();
   }
@@ -363,9 +364,9 @@ class _$FailureImpl<T> with DiagnosticableTreeMixin implements Failure<T> {
 }
 
 abstract class Failure<T> implements ApiResult<T> {
-  const factory Failure(final String message) = _$FailureImpl<T>;
+  const factory Failure(final ErrorHandler objOferrorHander) = _$FailureImpl<T>;
 
-  String get message;
+  ErrorHandler get objOferrorHander;
 
   /// Create a copy of ApiResult
   /// with the given fields replaced by the non-null parameter values.
