@@ -20,7 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool isObsecure = true;
-  bool rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
@@ -76,27 +75,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                Checkbox(
-                                  fillColor: rememberMe
-                                      ? MaterialStateProperty.all(
-                                          ColorsManger.minBlue)
-                                      : MaterialStateProperty.all(
-                                          ColorsManger.triblelLighteray), //+
-                                  side: BorderSide(color: ColorsManger.gray),
-                                  value: rememberMe,
-                                  onChanged: (bool? value) {
-                                    setState(() {
-                                      rememberMe = value!;
-                                    });
-                                  },
-                                ),
-                                Text(
-                                  'Remember me',
-                                  style: CustomstextStyels.font14RegularGray,
-                                ),
-                              ],
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [],
                             ),
                             Text(
                               'Forget Password',
@@ -110,9 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         textStyle: CustomstextStyels.font14lightGray,
                         onPressed: () {},
                       ),
-                      verticalSpace(15),
+                      verticalSpace(70),
                       const TermsAndConditionsText(),
-                      verticalSpace(60),
+                      verticalSpace(20),
                       const DontHaveAccountText(),
                     ],
                   ),
