@@ -1,26 +1,23 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
-import 'package:doctor_app/core/theming/colors.dart';
+
 import 'package:doctor_app/core/theming/styels.dart';
 import 'package:doctor_app/core/widgets/app_text_button.dart';
-import 'package:doctor_app/core/widgets/app_text_form_field.dart';
+
+import 'package:doctor_app/features/login/data/models/login_request_body.dart';
+import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/widgets/Email_And_Password.dart';
 import 'package:doctor_app/features/login/widgets/dont_have_account_text.dart';
+import 'package:doctor_app/features/login/widgets/login_bloc_listner.dart';
 import 'package:doctor_app/features/login/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
+// ignore: must_be_immutable
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
 
   TextEditingController emailController = TextEditingController();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +43,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 Column(
                   children: [
                     const EmailAndPassword(),
-
                     verticalSpace(5),
                     Padding(
                       padding: EdgeInsets.all(8.0.h),
@@ -67,12 +63,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     AppTextButton(
                       buttonText: "Login",
                       textStyle: CustomstextStyels.font14lightGray,
-                      onPressed: () {},
+                      onPressed: () {
+                        ValidateThenDoLogin(context);
+                      },
                     ),
-                    verticalSpace(70),
+                    verticalSpace(20),
                     const TermsAndConditionsText(),
                     verticalSpace(20),
                     const DontHaveAccountText(),
+                    const LoginBlocListner()
                   ],
                 )
               ],
@@ -81,5 +80,13 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void ValidateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formkey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginState(LoginRequestBody(
+          email: context.read<LoginCubit>().emailController.text,
+          password: context.read<LoginCubit>().passwordController.text));
+    }
   }
 }
