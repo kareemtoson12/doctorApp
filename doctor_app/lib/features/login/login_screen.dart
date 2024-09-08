@@ -3,6 +3,7 @@ import 'package:doctor_app/core/theming/colors.dart';
 import 'package:doctor_app/core/theming/styels.dart';
 import 'package:doctor_app/core/widgets/app_text_button.dart';
 import 'package:doctor_app/core/widgets/app_text_form_field.dart';
+import 'package:doctor_app/features/login/widgets/Email_And_Password.dart';
 import 'package:doctor_app/features/login/widgets/dont_have_account_text.dart';
 import 'package:doctor_app/features/login/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +17,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
   TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  bool isObsecure = true;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,61 +43,37 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: CustomstextStyels.font13RegularGray,
                 ),
                 verticalSpace(36),
-                Form(
-                  key: formkey,
-                  child: Column(
-                    children: [
-                      AppTextFormFaild(
-                          hintText: 'Email', vallue: emailController),
-                      AppTextFormFaild(
-                        hintText: 'Password',
-                        vallue: passwordController,
-                        isObscureText: isObsecure,
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              isObsecure = !isObsecure;
-                            });
-                          },
-                          icon: Icon(
-                            isObsecure
-                                ? Icons.visibility_off
-                                : Icons.visibility,
-                            color: isObsecure
-                                ? ColorsManger.gray // Default color
-                                : ColorsManger
-                                    .minBlue, // Change to blue when not obscure
+                Column(
+                  children: [
+                    const EmailAndPassword(),
+
+                    verticalSpace(5),
+                    Padding(
+                      padding: EdgeInsets.all(8.0.h),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [],
                           ),
-                        ),
+                          Text(
+                            'Forget Password',
+                            style: CustomstextStyels.font15regularblue,
+                          )
+                        ],
                       ),
-                      verticalSpace(5),
-                      Padding(
-                        padding: EdgeInsets.all(8.0.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [],
-                            ),
-                            Text(
-                              'Forget Password',
-                              style: CustomstextStyels.font15regularblue,
-                            )
-                          ],
-                        ),
-                      ),
-                      AppTextButton(
-                        buttonText: "Login",
-                        textStyle: CustomstextStyels.font14lightGray,
-                        onPressed: () {},
-                      ),
-                      verticalSpace(70),
-                      const TermsAndConditionsText(),
-                      verticalSpace(20),
-                      const DontHaveAccountText(),
-                    ],
-                  ),
+                    ),
+                    AppTextButton(
+                      buttonText: "Login",
+                      textStyle: CustomstextStyels.font14lightGray,
+                      onPressed: () {},
+                    ),
+                    verticalSpace(70),
+                    const TermsAndConditionsText(),
+                    verticalSpace(20),
+                    const DontHaveAccountText(),
+                  ],
                 )
               ],
             ),

@@ -7,18 +7,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 Widget AppTextFormFaild(
     {InputBorder? focusedBorder,
     InputBorder? enabledBorder,
+    InputBorder? errorBorder,
+    InputBorder? focusedErrorBorder,
     TextStyle? inputTextStyle,
     Color? backgroundColor,
     TextStyle? hintStyle,
     required String hintText,
-    required TextEditingController vallue,
+    required TextEditingController controller,
+   required   Function (String)validator,
     bool? isObscureText,
     Widget? suffixIcon,
     double? contentPadding}) {
   return Padding(
     padding: EdgeInsets.symmetric(vertical: 10.h),
     child: TextFormField(
-      controller: vallue,
+      validator: (value){return validator(value!);},
+
+      controller: controller,
       obscureText: isObscureText ?? false,
       style: CustomstextStyels.font14DarkBlueMeduim,
       decoration: InputDecoration(
@@ -27,10 +32,18 @@ Widget AppTextFormFaild(
           suffixIcon: suffixIcon,
           hintText: hintText,
           hintStyle: hintStyle ?? CustomstextStyels.font13RegularGray,
+          focusedErrorBorder:focusedErrorBorder ?? OutlineInputBorder(
+              borderSide:
+              const BorderSide(color: ColorsManger.minBlue, width: 1.3),
+              borderRadius: BorderRadius.circular(16)),
+          errorBorder: errorBorder ??  OutlineInputBorder(
+              borderSide:
+              const BorderSide(color: ColorsManger.red, width: 1.3),
+              borderRadius: BorderRadius.circular(16)),
           focusedBorder: focusedBorder ??
               OutlineInputBorder(
                   borderSide:
-                      const BorderSide(color: ColorsManger.minBlue, width: 1.3),
+                      const BorderSide(color: ColorsManger.red, width: 1.3),
                   borderRadius: BorderRadius.circular(16)),
           enabledBorder: enabledBorder ??
               OutlineInputBorder(
