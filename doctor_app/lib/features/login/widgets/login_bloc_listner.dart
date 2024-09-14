@@ -3,7 +3,7 @@ import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/styels.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_state.dart';
-import 'package:doctor_app/features/splash/splash_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +31,7 @@ class LoginBlocListner extends StatelessWidget {
           },
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.hemeScreen);
+            context.pushNamed(Routes.homeScreen);
           },
           error: (error) {
             context.pop();
@@ -45,7 +45,7 @@ class LoginBlocListner extends StatelessWidget {
                   size: 32,
                 ), // Icon
                 content: Text(
-                  error,
+                  '$error eeeeee',
                   style: CustomstextStyels.font14DarkBlueMeduim,
                 ), // Text
                 actions: [
@@ -64,7 +64,7 @@ class LoginBlocListner extends StatelessWidget {
           },
         );
       },
-      child: SizedBox.shrink(),
+      child: const SizedBox.shrink(),
     );
   }
 }

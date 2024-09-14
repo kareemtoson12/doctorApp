@@ -64,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                       buttonText: "Login",
                       textStyle: CustomstextStyels.font14lightGray,
                       onPressed: () {
-                        ValidateThenDoLogin(context);
+                        validateThenDoLogin(context);
                       },
                     ),
                     verticalSpace(20),
@@ -82,7 +82,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void ValidateThenDoLogin(BuildContext context) {
+  void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formkey.currentState!.validate()) {
       context.read<LoginCubit>().emitLoginState(LoginRequestBody(
           email: context.read<LoginCubit>().emailController.text,

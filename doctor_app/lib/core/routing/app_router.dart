@@ -27,7 +27,7 @@ class AppRouter {
 
       case Routes.SplashScreen:
         return MaterialPageRoute(builder: (context) => SplashScreen());
-      case Routes.hemeScreen:
+      case Routes.homeScreen:
         return MaterialPageRoute(builder: (context) => HomeScreen());
 
       default:

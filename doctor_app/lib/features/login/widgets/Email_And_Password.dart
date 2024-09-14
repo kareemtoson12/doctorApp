@@ -49,21 +49,19 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         key: context.read<LoginCubit>().formkey,
         child: Column(
           children: [
-            AppTextFormFaild(
+            appTextFormFaild(
                 hintText: 'Email',
                 controller: context.read<LoginCubit>().emailController,
                 validator: (value) {
-                  if (value == null ||
-                      value.isEmpty ||
-                      !AppRegex.isEmailValid(value)) {
+                  if (value == null || value.isEmpty) {
                     return 'please eneter valid email';
                   }
                 }),
-            AppTextFormFaild(
+            appTextFormFaild(
               controller: context.read<LoginCubit>().passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'please eneter valid email';
+                  return 'please enter valid email';
                 }
               },
               hintText: 'Password',
