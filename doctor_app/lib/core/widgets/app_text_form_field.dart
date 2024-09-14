@@ -40,13 +40,13 @@ Widget appTextFormFaild(
                   borderRadius: BorderRadius.circular(16)),
           errorBorder: errorBorder ??
               OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: ColorsManger.red, width: 1.3),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 83, 58, 58), width: 1.3),
                   borderRadius: BorderRadius.circular(16)),
           focusedBorder: focusedBorder ??
               OutlineInputBorder(
                   borderSide:
-                      const BorderSide(color: ColorsManger.red, width: 1.3),
+                      const BorderSide(color: ColorsManger.minBlue, width: 1.3),
                   borderRadius: BorderRadius.circular(16)),
           enabledBorder: enabledBorder ??
               OutlineInputBorder(
