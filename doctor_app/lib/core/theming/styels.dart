@@ -23,7 +23,7 @@ class CustomstextStyels {
       color: ColorsManger.minBlue);
   static TextStyle font15regularblue = TextStyle(
       fontSize: 15.sp,
-      fontWeight: FontWeightHelper.bold,
+      fontWeight: FontWeightHelper.regular,
       color: ColorsManger.minBlue);
 
   static TextStyle font13RegularGray = TextStyle(
@@ -33,6 +33,23 @@ class CustomstextStyels {
       fontSize: 20.sp,
       fontWeight: FontWeight.bold,
       color: ColorsManger.darkBlue);
+  static TextStyle fontSimiBold18Darkblack = TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w400,
+      color: ColorsManger.darkBlue);
+  static TextStyle fontBold20DarkBlue = TextStyle(
+      fontSize: 20.sp,
+      fontWeight: FontWeight.bold,
+      color: ColorsManger.darkBlue);
+
+  static TextStyle font18WhiteMeduim = TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.normal,
+      color: ColorsManger.white);
+  static TextStyle font15WhiteMeduim = TextStyle(
+      fontSize: 17.sp,
+      fontWeight: FontWeight.normal,
+      color: ColorsManger.white);
 
   static TextStyle font14RegularGray = TextStyle(
       fontSize: 14.sp,

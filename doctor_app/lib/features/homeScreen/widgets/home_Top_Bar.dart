@@ -23,7 +23,7 @@ class HomeTopBar extends StatelessWidget {
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         CircleAvatar(
           backgroundColor: ColorsManger.moreLighterGray,
           child: SvgPicture.asset('assets/svg/Notification.svg'),
