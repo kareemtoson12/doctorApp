@@ -33,6 +33,7 @@ class CustomstextStyels {
       fontSize: 20.sp,
       fontWeight: FontWeight.bold,
       color: ColorsManger.darkBlue);
+
   static TextStyle fontSimiBold18Darkblack = TextStyle(
       fontSize: 18.sp,
       fontWeight: FontWeight.w400,
