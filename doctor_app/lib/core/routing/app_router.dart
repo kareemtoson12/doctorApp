@@ -1,6 +1,7 @@
 import 'package:doctor_app/core/di/dependicy_injection.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/features/homeScreen/home_screen.dart';
+
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/login_screen.dart';
 import 'package:doctor_app/features/onboarding/onboarding_screen.dart';
@@ -11,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
-  Route gnerateRoute(RouteSettings settings) {
+  Route? gnerateRoute(RouteSettings settings) {
     //final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBordingScreen:
@@ -32,13 +33,10 @@ class AppRouter {
       case Routes.SplashScreen:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (context) => HomeScreen());
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
 
       default:
-        return MaterialPageRoute(
-            builder: (context) => Scaffold(
-                body: Center(
-                    child: Text('No route specified for${settings.name}'))));
+        return null;
     }
   }
 }

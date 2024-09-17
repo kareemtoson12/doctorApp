@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:doctor_app/core/networking/dio_refactory.dart';
 import 'package:doctor_app/core/networking/services_api.dart';
+
 import 'package:doctor_app/features/login/data/repo/login_repo.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/sigUp/data/repo/signUp_repo.dart';
@@ -18,4 +19,9 @@ Future<void> setUpGetIt() async {
   //sign up
   getit.registerLazySingleton<SignupRepo>(() => SignupRepo(getit()));
   getit.registerFactory<SignupCubit>(() => SignupCubit(getit()));
+  //home
+/*   getit.registerLazySingleton<HomeApiServices>(() => HomeApiServices(dio));
+  getit.registerLazySingleton<HomeRepo>(
+      () => HomeRepo(homeApiServices: getit()));
+  getit.registerFactory<HomeCubit>(() => HomeCubit(getit())); */
 }

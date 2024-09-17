@@ -9,6 +9,7 @@ class ColorsManger {
   static const Color triblelLighteray = Color(0xfffdfdff);
   static const Color moreLighterGray = Color(0xffF5F5F5);
   static const Color white = Color(0xffFFFFFF);
+  static const Color lightBlue = Color(0xffADD8E6);
 
   static const Color red = Color(0xffFF0000);
   static const Color green = Color(0xff008000);

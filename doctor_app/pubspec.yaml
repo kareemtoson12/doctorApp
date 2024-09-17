@@ -52,6 +52,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.3.2
   flutter_bloc: ^8.1.6
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

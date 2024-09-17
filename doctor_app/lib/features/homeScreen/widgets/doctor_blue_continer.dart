@@ -1,10 +1,11 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/theming/styels.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DoctorBlueContiner extends StatelessWidget {
-  const DoctorBlueContiner({super.key});
+class DoctorsBlueContainer extends StatelessWidget {
+  const DoctorsBlueContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class DoctorBlueContiner extends StatelessWidget {
               children: [
                 Text(
                   'Book and\nschedule with\nnearest doctor',
-                  style: CustomstextStyels.font15WhiteMeduim,
+                  style: CustomstextStyels.font18WhiteMeduim,
                   textAlign: TextAlign.start,
                 ),
                 verticalSpace(16),
